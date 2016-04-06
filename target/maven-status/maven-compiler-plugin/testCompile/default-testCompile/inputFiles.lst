@@ -1,0 +1,13 @@
+/home/mangadul/kurento/kurento-room/kurento-room-demo/src/test/java/org/kurento/room/test/demo/TwoUsersEqualLifetimeDemoTest.java
+/home/mangadul/kurento/kurento-room/kurento-room-demo/src/test/java/org/kurento/room/test/demo/fake/MixedUsersDemoTest.java
+/home/mangadul/kurento/kurento-room/kurento-room-demo/src/test/java/org/kurento/room/test/demo/fake/ParallelNFakeUsersDemoTest.java
+/home/mangadul/kurento/kurento-room/kurento-room-demo/src/test/java/org/kurento/room/test/demo/UnsubscribeFromMediaDemoTest.java
+/home/mangadul/kurento/kurento-room/kurento-room-demo/src/test/java/org/kurento/room/test/demo/AddRemoveUsersDemoTest.java
+/home/mangadul/kurento/kurento-room/kurento-room-demo/src/test/java/org/kurento/room/test/demo/WebAppAvailabilityDemoTest.java
+/home/mangadul/kurento/kurento-room/kurento-room-demo/src/test/java/org/kurento/room/test/demo/AddRemoveUsersNoSinkVerifyDemoTest.java
+/home/mangadul/kurento/kurento-room/kurento-room-demo/src/test/java/org/kurento/room/test/demo/SeqAddRemoveUserDemoTest.java
+/home/mangadul/kurento/kurento-room/kurento-room-demo/src/test/java/org/kurento/room/test/demo/UnpublishMediaDemoTest.java
+/home/mangadul/kurento/kurento-room/kurento-room-demo/src/test/java/org/kurento/room/test/demo/NUsersEqualLifetimeDemoTest.java
+/home/mangadul/kurento/kurento-room/kurento-room-demo/src/test/java/org/kurento/room/test/demo/SeqNUsersEqualLifetimeDemoTest.java
+/home/mangadul/kurento/kurento-room/kurento-room-demo/src/test/java/org/kurento/room/test/demo/fake/ExtraKmsFakeUsersDemoTest.java
+/home/mangadul/kurento/kurento-room/kurento-room-demo/src/test/java/org/kurento/room/test/demo/OneUserQuickReentryDemoTest.java
