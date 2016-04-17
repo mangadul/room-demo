@@ -59,8 +59,11 @@ kurento_room.controller('loginController', function ($scope, $http, ServiceParti
         		.then(function (response) {
             			//return response;
 				console.log(response);
+				//console.log(response.data.result);
+				
 				if(response.data.result)
-				{								
+				{			
+				
 					// start
 					var wsUri = 'wss://' + location.host + '/room';
 
@@ -188,6 +191,7 @@ kurento_room.controller('loginController', function ($scope, $http, ServiceParti
 				} else {
 					$scope.errorMsg = 'Username or Password not available';
 				}
+				
 			});
 	
     };

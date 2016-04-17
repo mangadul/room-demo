@@ -3,6 +3,7 @@ package org.kurento.room.demo;
 
 import java.util.List;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
@@ -18,6 +19,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
+
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.Repository;
+import org.springframework.data.repository.query.Param;
 
 @RestController
 @RequestMapping("/users")
@@ -102,18 +107,26 @@ public class UserRestController {
 
 
 	@RequestMapping(value = "/AuthLogin", method = RequestMethod.POST)
-	public Map<String, Boolean> userLogin(@RequestBody String data) throws UnsupportedEncodingException, JSONException {
+	public Map<String, Object> userLogin(@RequestBody String data) throws UnsupportedEncodingException, JSONException {
                 JSONObject json=new JSONObject(data);
                 String uname=(String)(json.getJSONObject("param").get("uname"));
                 String upass=(String)(json.getJSONObject("param").get("upass"));
 		Md5PasswordEncoder encoderMD5 = new Md5PasswordEncoder();
 		String securePass = encoderMD5.encodePassword(upass, null);
                 List<User> users=userRepository.findByUsernameAndPassword(uname, securePass);
-		Map<String, Boolean> map = new HashMap<String, Boolean>(1){{put("result", Boolean.FALSE);}};
                 if (users.size()>0){
-		  Map<String, Boolean> maps = new HashMap<String, Boolean>(1){{put("result", Boolean.TRUE);}};
-		  return maps;
-		} else return map;
+			Map<String, Object> retval=new HashMap<String, Object>(); 
+			retval.put("result", Boolean.TRUE);
+			return retval;
+		  	//Map<String, Boolean> maps = new HashMap<String, Boolean>(1){{put("result", Boolean.TRUE);}};
+		  	//return maps;
+		} else {
+			//Map<String, Boolean> map = new HashMap<String, Boolean>(1){{put("result", Boolean.FALSE);}};
+			Map<String, Object> map=new LinkedHashMap<String, Object>();
+			map.put("result", Boolean.FALSE);
+			map.put("data", users);
+			return map;
+		}
 	}
 
 }
